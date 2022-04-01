@@ -1,0 +1,116 @@
+﻿<Window x:Class="DB_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DB_03"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl x:Name="tabControl">
+            <TabItem x:Name="t_info" Header="Info">
+                <Grid>
+                    <TextBox x:Name="tb_first" HorizontalAlignment="Left" Height="23" Margin="158,34,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="tb_last" HorizontalAlignment="Left" Height="23" Margin="158,74,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="tb_city" HorizontalAlignment="Left" Height="23" Margin="158,121,0,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="l_first" Content="First Name" HorizontalAlignment="Left" Margin="66,34,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="l_city" Content="City" HorizontalAlignment="Left" Margin="66,121,0,0" VerticalAlignment="Top" Width="66"/>
+                    <Label x:Name="l_last" Content="Last Name" HorizontalAlignment="Left" Margin="66,74,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="b_Add" Content="Add Person" HorizontalAlignment="Left" Margin="105,175,0,0" VerticalAlignment="Top" Width="75" Click="b_Add_Click"/>
+                    <DataGrid x:Name="gridPerson" HorizontalAlignment="Left" Margin="311,34,0,0" VerticalAlignment="Top" Height="237" Width="272" SelectionChanged="gridPerson_SelectionChanged"/>
+                    <Button x:Name="b_delete" Content="Delete Selected" HorizontalAlignment="Left" Margin="465,276,0,0" VerticalAlignment="Top" Width="107" Click="b_delete_Click"/>
+                    <Button x:Name="b_update" Content="Update Person" HorizontalAlignment="Left" Margin="201,175,0,0" VerticalAlignment="Top" Width="95" Click="b_update_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="t_events" Header="Events">
+                <Grid>
+                    <TextBox x:Name="tb_eventName" HorizontalAlignment="Left" Height="23" Margin="158,34,0,0" TextWrapping="Wrap" Text="Event Name" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="tb_eventCity" HorizontalAlignment="Left" Height="23" Margin="158,74,0,0" TextWrapping="Wrap" Text="Event City" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="tb_eventDescription" HorizontalAlignment="Left" Height="23" Margin="158,121,0,0" TextWrapping="Wrap" Text="Event Description" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="l_eventName" Content="Event Name" HorizontalAlignment="Left" Margin="66,34,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="l_eventCity" Content="Event City" HorizontalAlignment="Left" Margin="66,71,0,0" VerticalAlignment="Top" Width="66"/>
+                    <Label x:Name="l_eventDescription" Content="Event Desc" HorizontalAlignment="Left" Margin="69,115,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="b_eventAdd" Content="Add Event" HorizontalAlignment="Left" Margin="105,175,0,0" VerticalAlignment="Top" Width="75" Click="b_eventAdd_Click"/>
+                    <DataGrid x:Name="gridEvent" HorizontalAlignment="Left" Margin="311,34,0,0" VerticalAlignment="Top" Height="237" Width="272" SelectionChanged="gridEvent_SelectionChanged"/>
+                    <Button x:Name="b_eventDelete" Content="Delete Selected" HorizontalAlignment="Left" Margin="465,276,0,0" VerticalAlignment="Top" Width="107" Click="b_eventDelete_Click"/>
+                    <Button x:Name="b_eventUpdate" Content="Update Event" HorizontalAlignment="Left" Margin="201,175,0,0" VerticalAlignment="Top" Width="95" Click="b_eventUpdate_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="t_occ" Header="Occupation" Height="20" VerticalAlignment="Bottom">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="occupation" HorizontalAlignment="Left" Margin="93,73,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem x:Name="cb_occ1" Content="IT"/>
+                        <ComboBoxItem x:Name="cb_occ2" Content="Lawyer"/>
+                        <ComboBoxItem x:Name="cb_occ3" Content="Doctor"/>
+                    </ComboBox>
+                    <ComboBox x:Name="hobby" HorizontalAlignment="Left" Margin="93,203,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem x:Name="cb_hob1" Content="Guitar"/>
+                        <ComboBoxItem x:Name="cb_hob2" Content="Gaming"/>
+                        <ComboBoxItem x:Name="cb_hob3" Content="Sports"/>
+                    </ComboBox>
+                    <Label Content="Occupation" HorizontalAlignment="Left" Margin="118,34,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Hobbies" HorizontalAlignment="Left" Margin="126,161,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="t_fm" Header="Face Maker">
+                <Grid>
+                    <Canvas x:Name="myCanvas" HorizontalAlignment="Left" Height="317" Margin="392,67,0,0" VerticalAlignment="Top" Width="382"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="148" Margin="8,78,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.501,0.505"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="8,266,0,0" VerticalAlignment="Top" Width="138"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="148" Margin="249,78,0,0" VerticalAlignment="Top" Width="138"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="249,266,0,0" VerticalAlignment="Top" Width="138"/>
+
+                    <DockPanel>
+                        <Menu x:Name="menu" IsMainMenu="True" Width="100" Height="20" Margin="-600,0,0,0" VerticalAlignment="Top">
+                            <Menu.Resources>
+                            </Menu.Resources>
+                            <MenuItem Header="MainMenu">
+                                <MenuItem Header="Face">
+                                    <MenuItem Header="Hair">
+                                        <MenuItem Header="Hair 1" Command="{Binding newHairCMD1}"/>
+                                        <MenuItem Header="Hair 2" Command="{Binding newHairCMD2}"/>
+                                        <MenuItem Header="Hair 3" Command="{Binding newHairCMD3}"/>
+                                    </MenuItem>
+                                    <MenuItem Header="Eyes">
+                                        <MenuItem Header="Eyes 1" Command="{Binding newEyesCMD1}"/>
+                                        <MenuItem Header="Eyes 2" Command="{Binding newEyesCMD2}"/>
+                                        <MenuItem Header="Eyes 3" Command="{Binding newEyesCMD3}"/>
+                                    </MenuItem>
+                                    <MenuItem Header="Nose">
+                                        <MenuItem Header="Nose 1" Command="{Binding newNoseCMD1}"/>
+                                        <MenuItem Header="Nose 2" Command="{Binding newNoseCMD2}"/>
+                                        <MenuItem Header="Nose 3" Command="{Binding newNoseCMD3}"/>
+                                    </MenuItem>
+                                    <MenuItem Header="Mouth">
+                                        <MenuItem Header="Mouth 1" Command="{Binding newMouthCMD1}"/>
+                                        <MenuItem Header="Mouth 2" Command="{Binding newMouthCMD2}"/>
+                                        <MenuItem Header="Mouth 3" Command="{Binding newMouthCMD3}"/>
+                                    </MenuItem>
+                                    <MenuItem Header="Random Face" Command="{Binding newRandomCMD}"/>
+                                </MenuItem>
+                            </MenuItem>
+                        </Menu>
+
+                    </DockPanel>
+                    <Button Content="Hair 1" Command="{Binding newHairCMD1}" HorizontalAlignment="Left" Margin="52,89,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Hair 2" Command="{Binding newHairCMD2}" HorizontalAlignment="Left" Margin="52,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.927,1.503" Height="30" Width="50"/>
+                    <Button Content="Hair 3" Command="{Binding newHairCMD3}" HorizontalAlignment="Left" Margin="52,187,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.927,1.503" Height="30" Width="50"/>
+                    <Button Content="Eyes 1" Command="{Binding newEyesCMD1}" HorizontalAlignment="Left" Margin="293,89,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Eyes 2" Command="{Binding newEyesCMD2}" HorizontalAlignment="Left" Margin="293,137,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Eyes 3" Command="{Binding newEyesCMD3}" HorizontalAlignment="Left" Margin="293,187,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Random" Command="{Binding newRandomCMD}" HorizontalAlignment="Left" Margin="170,233,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Mouth 3" Command="{Binding newMouthCMD3}" HorizontalAlignment="Left" Margin="293,374,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Mouth 2" Command="{Binding newMouthCMD2}" HorizontalAlignment="Left" Margin="293,326,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Mouth 1" Command="{Binding newMouthCMD1}" HorizontalAlignment="Left" Margin="293,282,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Nose 3" Command="{Binding newNoseCMD3}" HorizontalAlignment="Left" Margin="52,374,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Nose 2" Command="{Binding newNoseCMD2}" HorizontalAlignment="Left" Margin="52,326,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                    <Button Content="Nose 1" Command="{Binding newNoseCMD1}" HorizontalAlignment="Left" Margin="52,282,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
